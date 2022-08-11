@@ -1,10 +1,4 @@
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
-body {
+.carousel-container {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -12,11 +6,17 @@ body {
   align-items: center;
 }
 
-.carousel-container {
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slides-container {
   position: relative;
 }
 
-.slide-container {
+.slide {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -26,13 +26,13 @@ body {
   transition-delay: 200ms;
 }
 
-.slide-container.active {
+.slide.current {
   z-index: 1;
   opacity: 1;
   transition-delay: 0ms;
 }
 
-.button-container {
+.buttons-container {
   display: flex;
   position: absolute;
   top: 80%;
@@ -47,15 +47,15 @@ body {
   cursor: pointer;
 }
 
+.progress-button:active {
+  background-color: blue;
+}
+
 .progress-button {
   height: 2.5em;
   width: 2.5em;
   font-size: 1rem;
   transition: background-color 20ms;
-}
-
-.progress-button:active {
-  background-color: blue;
 }
 
 .index-buttons-container {
@@ -71,6 +71,6 @@ body {
   transition: background-color 200ms;
 }
 
-.index-button.active {
+.index-button.current {
   background-color: blue;
 }
