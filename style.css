@@ -1,0 +1,71 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-container {
+  position: relative;
+}
+
+.slide-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+  transition-delay: 200ms;
+}
+
+.slide-container.active {
+  z-index: 1;
+  opacity: 1;
+  transition-delay: 0ms;
+}
+
+.button-container {
+  display: flex;
+  position: absolute;
+  top: 80%;
+}
+
+.progress-button,
+.index-button {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.progress-button {
+  height: 2.5em;
+  width: 2.5em;
+  font-size: 1rem;
+}
+
+.index-buttons-container {
+  margin: 0 2em;
+  display: flex;
+  align-items: center;
+}
+
+.index-button {
+  height: 1em;
+  width: 1em;
+  margin: 0 0.5em;
+  transition: background-color 200ms;
+}
+
+.index-button.active {
+  background-color: blue;
+}
